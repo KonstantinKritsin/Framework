@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB66AA39-88B0-4B5D-BD39-D2CAACAE2840}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project.Framework</RootNamespace>
+    <AssemblyName>Project.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\HandlerBase.cs" />
+    <Compile Include="BusinessLogic\HandlerContext.cs" />
+    <Compile Include="BusinessLogic\HandlerProcessor.cs" />
+    <Compile Include="BusinessLogic\HandlerProcessorFactory.cs" />
+    <Compile Include="Common\Context\Context.cs" />
+    <Compile Include="Common\Context\IUnitOfWork.cs" />
+    <Compile Include="Common\Context\UnitOfWork.cs" />
+    <Compile Include="Common\DateTime\IDateTimeOffsetProvider.cs" />
+    <Compile Include="Common\DateTime\IDateTimeProvider.cs" />
+    <Compile Include="Common\DateTime\LocalDateTimeOffsetProvider.cs" />
+    <Compile Include="Common\DateTime\LocalDateTimeProvider.cs" />
+    <Compile Include="Common\DateTime\UtcDateTimeOffsetProvider.cs" />
+    <Compile Include="Common\DateTime\UtcDateTimeProvider.cs" />
+    <Compile Include="Common\DependencyResolver\ConstructorArgument.cs" />
+    <Compile Include="Common\DependencyResolver\IDependencyResolver.cs" />
+    <Compile Include="Common\Enums\FaultLevel.cs" />
+    <Compile Include="Common\Enums\IsolationLevel.cs" />
+    <Compile Include="Common\Exceptions\DataAccessException.cs" />
+    <Compile Include="Common\Exceptions\ParentContextIsNullException.cs" />
+    <Compile Include="Common\Guid\GuidProvider.cs" />
+    <Compile Include="Common\Guid\IGuidProvider.cs" />
+    <Compile Include="Common\JsonConverter\IJsonConverter.cs" />
+    <Compile Include="CrossCuttingConcerns\AC.cs" />
+    <Compile Include="CrossCuttingConcerns\Caching\ICache.cs" />
+    <Compile Include="CrossCuttingConcerns\Caching\NullObjectCache.cs" />
+    <Compile Include="CrossCuttingConcerns\Identity\IMember.cs" />
+    <Compile Include="CrossCuttingConcerns\Identity\IModelMember.cs" />
+    <Compile Include="CrossCuttingConcerns\Identity\IPrincipal.cs" />
+    <Compile Include="CrossCuttingConcerns\Identity\NullObjectPrincipal.cs" />
+    <Compile Include="CrossCuttingConcerns\Logging\ILogger.cs" />
+    <Compile Include="CrossCuttingConcerns\Logging\LogLevel.cs" />
+    <Compile Include="CrossCuttingConcerns\Logging\NullObjectLog.cs" />
+    <Compile Include="CrossCuttingConcerns\Logging\TraceLog.cs" />
+    <Compile Include="DataAccess\Data\IDataAccessor.cs" />
+    <Compile Include="DataAccess\Data\IDbUnitOfWork.cs" />
+    <Compile Include="DataAccess\Data\IQueryRepository.cs" />
+    <Compile Include="DataAccess\Data\IRepository.cs" />
+    <Compile Include="DataAccess\Data\ITransaction.cs" />
+    <Compile Include="DataAccess\ModelContract\ICreatedAt.cs" />
+    <Compile Include="DataAccess\ModelContract\ICreatedBy.cs" />
+    <Compile Include="DataAccess\ModelContract\IDeletable.cs" />
+    <Compile Include="DataAccess\ModelContract\IEntityKey.cs" />
+    <Compile Include="DataAccess\ModelContract\IModifiedAt.cs" />
+    <Compile Include="DataAccess\ModelContract\IModifiedBy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
